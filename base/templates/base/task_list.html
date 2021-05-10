@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>TO DO LIST</title>
-<h1>{{ request.user.username|upper }} TO DO LIST.</h1>
+    <title>TO DO LIST</title>
+    <h1>{{ request.user.username|upper }} TO DO LIST.</h1>
 </head>
 <body>
     <table>
         <caption></caption>
         <tr>
             <th id="">Item</th>
+            <th id=""></th>
         </tr>
         {% for task in tasks %}
         <tr>
             <td>{{ task.title }}</td>
+            <td><a href="{% url 'task' task.id %}">View</a></td>
         </tr>
         {% empty %}
         <h3>No items found.</h3>
