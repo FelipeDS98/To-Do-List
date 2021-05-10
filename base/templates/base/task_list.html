@@ -3,6 +3,7 @@
 <head>
     <title>TO DO LIST</title>
     <h1>{{ request.user.username|upper }} TO DO LIST.</h1>
+    <a href="{% url 'task-create' %}">Add Task</a>
 </head>
 <body>
     <table>
