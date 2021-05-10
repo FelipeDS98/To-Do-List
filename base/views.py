@@ -1,6 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic.list import ListView 
+from .models import Task
 
-def taskList(request):
-    return HttpResponse('Just trying with some function based view.')
+class TaskList(ListView):
+    model = Task
+    template_name = 'base/tasks.html'
+    context_object_name = "tasks"
 

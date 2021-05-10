@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>TO DO LIST</title>
+<h1>{{ request.user.username|upper }} TO DO LIST.</h1>
+</head>
+<body>
+    <table>
+        <caption></caption>
+        <tr>
+            <th id="">Item</th>
+        </tr>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task.title }}</td>
+        </tr>
+        {% empty %}
+        <h3>No items found.</h3>
+        {% endfor%}
+    </table>
+</body>
+</html>
+
