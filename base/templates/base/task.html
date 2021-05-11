@@ -3,8 +3,15 @@
 <head>
     <title>DETAIL PAGE</title>
     <h1>Task: {{ task }}</h1>
+    <hr>
+    <p>Description: {{ task.description }}</p>
+    <hr>
+    <p>Completed: {{ task.complete }}</p>
+    <hr>
+    <p>Date: {{ task.created }}</p>
+    <hr>
+    <a href="{% url 'tasks' %}">Go back</a>
 </head>
 <body> 
 </body>
 </html>
-

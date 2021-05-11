@@ -10,9 +10,22 @@
     {% endif %}
     <hr>
     <h1>{{ request.user.username|upper }} TO DO LIST</h1>
+    <hr>
+    {% if count == 1 %}
+        <h3>YOU HAVE {{ count }} PENDING TASK</h3>
+    {% else %}
+    <h3>YOU HAVE {{ count }} PENDING TASKS</h3>
+    {% endif %}
+    <hr>
     <a href="{% url 'task-create' %}">Add Task</a>
+    <hr>
 </head>
 <body>
+    <form method="GET">
+        <input type="text" name="search-area" value="{{ search_input }}">
+        <input type="submit" value="Search">
+    </form>
+
     <table>
         <caption></caption>
         <tr>
@@ -31,6 +44,7 @@
         <h3>No items found.</h3>
         {% endfor%}
     </table>
+    <hr>
 </body>
 </html>
 

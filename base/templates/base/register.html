@@ -1,0 +1,21 @@
+<h1>Register</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <table>
+        <caption></caption>
+        <tr>
+            <th id="">{{ form.username.label_tag }}</th>
+            <th id="">{{ form.username }}</th>
+        </tr>
+        <tr>
+            <td>{{ form.password1.label_tag }}</td>
+            <td>{{ form.password1 }}</td>
+            <td>{{ form.password2.label_tag }}</td>
+            <td>{{ form.password2 }}</td>
+        </tr>
+    </table>
+    <input type="submit" value="Register">
+</form>
+
+<p>Already have an account? <a href="{% url 'login' %}">LOGIN</a></p>
